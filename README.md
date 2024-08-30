@@ -1,6 +1,10 @@
 WebDriver is a Interface------Chrome,firefox,edge n so on are the implementation classes.
+
+
 Q] How to Launch Browser?
-  1] Launch ChromeBrowser : 
+
+
+         1] Launch ChromeBrowser : 
                  System.setProperty(“key”,”value”);
                                       Key  webdriver.chrome.driver
                                       Value path of chromedriver.exe\\chromedriver.exe 
