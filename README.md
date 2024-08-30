@@ -149,7 +149,7 @@ Q] How to handle Bootstrap Dropdown in Selenium WebDriver?
     Bootstrap Dropdown means here Select Tag is not available to Dropdown and WebElement look like button but it is actually Dropdown.
 
 driver.findElement(By.xpath(“—xpath--”)).click();---wb of Dropdown
-List<WebElement> l = driver.findElements(By.xpath(“—xpath--”));---------------------------------------------------------------------------list of wb of Bootstrap dropdown
+List<WebElement> l = driver.findElements(By.xpath(“—xpath--”));-----------------list of wb of Bootstrap dropdown
 System.out.println(“No. of Option in Bootstrap Dropdown”+wb.size());
 for(WebElement e : l)
 			{
@@ -176,7 +176,7 @@ getOptFromDropdown(wb1,“value”,“value”,“value”);
             OR
 getOptFromDropdown(wb1,“all”);  
 
-List<WebElement> l = driver.findElements(By.xpath(“—xpath--”));---------------------------------------------------------------------------list of wb of jQuery dropdown
+List<WebElement> l = driver.findElements(By.xpath(“—xpath--”));----------------------list of wb of jQuery dropdown
 //write Generic method
 Public static void getOptFromDropdown(WebElement wb,String… value)  {
           Select s = new Select(wb);
