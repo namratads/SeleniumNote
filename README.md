@@ -234,5 +234,30 @@ OR
 			}
 
 
+ 
+Q] How to handle JavaScript ALerts
+
+    driver.switchTo().alert().accept();
+    
+Q] How to handle Authentication pop-ups
+
+
+
+Q] How to handle permission based pop-ups
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
