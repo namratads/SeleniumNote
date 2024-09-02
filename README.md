@@ -1,3 +1,7 @@
+Q 1] What is the Selenium?
+==> Selenium is an open-source automation testing framework used for testing web applications across different browsers and platforms. It provides a suite of tools that cater to different automation testing needs, making it a popular choice among testers for both functional and regression testing of web applications. Here’s a brief overview of its components:
+
+
 WebDriver is a Interface------Chrome,firefox,edge n so on are the implementation classes.
 
 
