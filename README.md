@@ -1,9 +1,11 @@
 Q 1] What is the Selenium?
+
 ==> Selenium is an open-source automation testing framework used for testing web applications across different browsers and platforms.
 
 It provides a suite of tools that cater to different automation testing needs, making it a popular choice among testers for both functional and regression testing of web applications.
 
 Q 2] What are the component of Selenium?
+
 ==> Selenium is composed of several components, each serving a specific purpose in the overall framework for automating web applications. These components are:
 
  ---1) Selenium IDE :  For record-and-playback of test cases.
@@ -18,6 +20,7 @@ Q 2] What are the component of Selenium?
 
 
 Q 3] What is WebDriver?  
+
 ==>
 
 WebDriver is a Interface------Chrome,firefox,edge n so on are the implementation classes.
