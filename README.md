@@ -268,50 +268,60 @@ Q 7] What is WebDriverManager ?
 WebDriverManager is a Java library that automates the management of browser drivers, 
 such as ChromeDriver, GeckoDriver (for Firefox)and others, 
 which are required by Selenium WebDriver to control web browsers.
-Q] How to Open URL?
-  
+WebDriverManager automatically handles browser updates and driver versions.
+
+
+Q 8] How to Open URL?
          
-	    driver.get(“pass the application url”);
+    driver.get(“pass the application url”);
  OR
-          
-	    driver.navigate().to(“pass the application url”);
+           
+    driver.navigate().to(“pass the application url”);
 
-Q] How to Capture Title of Web Page?
-  
+Q 9] How to Capture Title of Web Page?
+ 
 
-         System.out.println("The Title of WebPage is : " + driver.getTitle());
+    System.out.println("The Title of WebPage is : " + driver.getTitle());
 
-Q] How to Capture URL of Web Page?
- 
+Q 10] How to Capture URL of Web Page?
 
-          System.out.println("The URL of WebPage is : " + driver.getCurrentUrl());
+    System.out.println("The URL of WebPage is : " + driver.getCurrentUrl());
 
-Q] How to Capture Page-source of Web Page?
-             
+Q 11] How to Capture Page-source of Web Page?          
 
-          System.out.println("The Page-source of WebPage is : " + driver.getPageSource());
+    System.out.println("The Page-source of WebPage is : " + driver.getPageSource());
 
-Q] How to check WebElement is Displayed , Enabled and Selected?
- 
+Q 12] How to check WebElement is Displayed , Enabled and Selected?
+
 Demo website  =   https://demo.nopcommerce.com/register
 
+    WebElement wb = driver.findElement(By.xpath(“—xpath--”));
+    System.out.println(wb.isDisplayed());--------true/false
+    System.out.println(wb.isEnabled());--------true/false
+Selected() is used for RadioButton/DropDown/CheckBoxes is selected or not
 
-          WebElement wb = driver.findElement(By.xpath(“—xpath--”));
-          System.out.println(wb.isDisplayed());--------true/false
-          System.out.println(wb.isEnabled());--------true/false
-          Selected() is used for RadioButton/DropDown/CheckBoxes is selected or not
-          WebElement wb = driver.findElement(By.xpath(“—xpath--”));
-          System.out.println(wb.isSelected());--------true/false
+    WebElement wb = driver.findElement(By.xpath(“—xpath--”));
+    System.out.println(wb.isSelected());--------true/false
+
+Q 13] How to Navigate Back and Forward? 
+ Here we want to 2 websites
+ Demo website  =   https://www.amazon.in/    and     https://www.snapdeal.com/ 
+
+    driver.navigate().back();
+    driver.navigate().forward();
+
+Q 14] How to Refresh or Reload page?
+  
+    driver.navigate().refresh();
+
+Q 15] What is the difference between get(); and navigate().to();?
 
 
+Feature-----------------get();---------------------------------navigate().to();
+Wait Behavior	        Waits for the entire page to load      Does not always wait for full page load
+History Handling	Does not maintain browser history      Maintains browser history, useful for navigating back/forward
+Additional Actions	Only opens URL	                       Can navigate back, forward, refresh in addition to opening URL
 
-Q] How to Navigate Back and Forward? How to Refresh or Reload page?
- Here we want to 2 websites
-           
-	   Demo website  =   https://www.amazon.in/    and     https://www.snapdeal.com/ 
-           driver.navigate().back();
-           driver.navigate().forward();
-           driver.navigate().refresh();
 
 Q] findElement();  method -------returns Single WebElement---if not found then throwsNoSuchElementException
 
