@@ -329,16 +329,23 @@ Feature-----------------get();---------------------------------navigate().to();
 Q 16] What is the difference between findElement(); and findElements(); in Selenium WebDriver?
 
 findElement(); method 
+
 ---used to locate a single web element on the web page.
+
 ---returns Single WebElement or first matching element.
+
 ---if not found then throwsNoSuchElementException
 
     Driver.findElement(By.xpath(“—xpath--”));
 findElements(); method 
+
 ---used to locate multiple web elements that match the locator.
+
 ---Returns a List<WebElement> of all matching elements.
+
 ---If no elements are found, it returns an empty list (does not throw an exception)
    --size();method--just return 0 (not throws any exception)
+   
 ---if xpath of only one WebElement pass then it will return one WebElement. 
     
     Driver.findElements(By.xpath(“—xpath--”));
@@ -351,27 +358,127 @@ findElements(); method
 
 Q 17] How to clear old text from Input Box and provide new text in Input Box?
   or Q] How to provide and clear text from input box?
+  
 --sendKeys() is used to type or input text into an element.
+
 --clear() removes any existing text from a text input field.
       
     WebElement wb = driver.findElement(By.xpath(“—xpath--”));
     System.out.println(wb.clear());------it will return clear Text from Input Box
     System.out.println(wb.sendKeys(“—someText--”));
 
-Q] How to Capture Text from Input Box?
+Q 18] How to Capture Text from Input Box?
      
-     System.out.println(wb.getAttribute(“value”));  ------it will return default Text from Input Box
+    System.out.println(wb.getAttribute(“value”));  ------it will return default Text from Input Box
+    
 Note : we cannot use .getText() method b’coz it return innertext of webelement(which in black color) in DOM.
-Q] How to handle Drpdown in Selenium WebDriver?
+
+Q 19] What is the difference between getText() and getAttribute("value")?
+
+--both used to retrieve information from a web element, but they serve different purposes 
+
+  i)getText()
+  
+   --retrieves the visible text of a web element (i.e., the text between the opening and closing tags of an element).
+   
+   --Returns a String containing the visible text of the element.
+   
+   --Used when you want to capture the displayed text on the screen for elements
+   
+  ii)getAttribute("value")
+  
+   --retrieves the value of a specific attribute (such as "value", "href", "class", etc.) from a web element.
+   
+   --Returns a String containing the value of the specified attribute.
+   
+Q 20] How to handle Drpdown in Selenium WebDriver?
+
 Here Select class which is provided by Selenium WebDriver, when WebElement having Select TagName then we can handle that webelement by three different ways.
 
 
-  1)	 .selectByVisibleText();
-  2)	 . selectByValue();
-  3)	 . selectByIndex();
-•	Above all these way use to select one option from Dropdown
+Locate the dropdown element
 
-    Demo website  =   https://www.opencart.com/index.php?route=account/register
+    WebElement dropdown = driver.findElement(By.id("dropdownID"));
+Create an instance of the Select class
+
+    Select select = new Select(dropdown);
+i)Select an option by visible text
+
+    select.selectByVisibleText("Option Text");
+ii)Select an option by value attribute
+
+    select.selectByValue("optionValue");
+iii)Select an option by index (index starts at 0)
+
+    select.selectByIndex(2);
+
+Get the first selected option and print its text
+
+    WebElement selectedOption = select.getFirstSelectedOption();
+    System.out.println("Selected option: " + selectedOption.getText());
+
+Get all options in the dropdown
+    
+    List<WebElement> options = select.getOptions();
+    for (WebElement option : options) 
+    {
+    System.out.println("Option: " + option.getText());
+    }
+
+Q 21] What is the use of Select class?
+
+--The Select class in Selenium WebDriver is specifically designed to handle HTML <select> elements, which represent dropdown menus. 
+
+--It provides methods to easily interact with single-selection and multi-selection dropdowns by selecting or deselecting options.
+
+    1).selectByVisibleText();
+    //Selects an option based on the visible text of the option.
+    //parameter-text
+    // return type is void
+    
+    2).selectByValue();
+    //Selects an option whose value attribute matches the specified string.
+    //parameter-value
+    // return type is void
+    
+    3).selectByIndex();
+    //Selects an option based on its index (the position of the option in the dropdown, starting from 0).
+    //parameter-index
+    // return type is void
+    
+    4).isMultiple();
+    //To check if the dropdown is a multi-select dropdown, meaning that it allows the user to select more than one option at a time.
+    //Return type is boolean(Returns true if the dropdown allows multiple selections; otherwise, returns false).
+    
+    5).deselectByVisibleText();
+    //Deselects an option based on the visible text of the option (only works for multi-select dropdowns).
+    //parameter-text
+    // return type is void
+    
+    6).deselectByValue();
+    //Deselects an option whose value attribute matches the specified string (only works for multi-select dropdowns).
+    //parameter-value
+    // return type is void
+    
+    7).deselectByIndex();
+    //Deselects an option based on its index (the position of the option in the dropdown, starting from 0) in a multi-select dropdown.
+    //parameter-index
+    // return type is void
+    
+    8).deselectAll();
+    //Deselects all selected options in a multi-select dropdown.
+    // return type is void
+    
+    9).getAllSelectedOptions();
+    //Returns a list of all selected options in a dropdown (works for both single and multi-select dropdowns).
+    //Return Type: List<WebElement> (A list of WebElement objects that are currently selected).
+    
+    10).getOptions();
+    //Returns a list of all options available in the dropdown
+    //Return type is List<WebElement> (A list of all the WebElement options in the dropdown).
+
+Demo website  =   https://www.opencart.com/index.php?route=account/register
+        
     WebElement wb = driver.findElement(By.xpath(“—xpath--”));-----webelement of Dropdown
  // Create a Select class object to select one option from Dropdown
           
@@ -399,9 +506,10 @@ Here Select class which is provided by Selenium WebDriver, when WebElement havin
 
 
 Q] How to handle Multiple Dropdowns in a WebPage? 
+or Q] How to handle Multiple Dropdowns in a WebPage using generic method?
 
-    Demo website  =  https://formstone.it/components/dropdown/demo/ 
-    Demo website  =   https://admirhodzic.github.io/multiselect-dropdown/demo.html
+Demo website  =  https://formstone.it/components/dropdown/demo/ 
+Demo website  =   https://admirhodzic.github.io/multiselect-dropdown/demo.html
 
 Aproach1 : with Select class ---------it is a lengthy aprroach
 
