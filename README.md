@@ -10,7 +10,7 @@ Q 2] What are the component of Selenium?
 
  ---1) Selenium IDE :  For record-and-playback of test cases.
     
- ---2) Selenium RC :An older component, now replaced by WebDriver.
+ ---2) Selenium RC : An older component, now replaced by WebDriver.
     
  ---3) Selenium Grid : For distributed and parallel test execution.
     
@@ -64,7 +64,7 @@ Selenium WebDriver offers several advantages that make it a popular choice for w
    
 3. Supports Multiple Programming Languages
 
-   --Java, Python, C#, Ruby, JavaScript, and Kotlin--allows testers and developers to write test scripts in the language as per thier choice
+   --Java, Python, C#, Ruby, JavaScript, and Kotlin--allows testers and developers to write test scripts in the language as per their choice
    
 4. Direct Interaction with Browsers
 
@@ -75,7 +75,6 @@ Selenium WebDriver offers several advantages that make it a popular choice for w
     --WebDriver is capable of handling modern web technologies and dynamic content that can change without a page reload.
 
     -- It can wait for elements to appear or become clickable before interacting with them, which improves the reliability of test scripts.
-
 
 6. Wide Range of Web Element Locators
 
@@ -110,7 +109,7 @@ Selenium WebDriver offers several advantages that make it a popular choice for w
 
 12.  Support for Browser Extensions
 
-13.   Extensive Documentation and Community SupportQ 1] What is the Selenium?
+13.   Extensive Documentation and Community Support
 
 While Selenium WebDriver is a powerful and widely-used tool for web automation testing, it does have some disadvantages and limitations.
 
@@ -122,7 +121,7 @@ While Selenium WebDriver is a powerful and widely-used tool for web automation t
 
 2. No Built-in Reporting
 
- --Manual Setup Required: Selenium WebDriver does not come with built-in reporting capabilities.
+ -- Manual Setup Required: Selenium WebDriver does not come with built-in reporting capabilities.
  
  -- Testers need to integrate it with third-party tools or frameworks (like TestNG, JUnit, or custom solutions) to generate test reports.
 
@@ -139,7 +138,7 @@ While Selenium WebDriver is a powerful and widely-used tool for web automation t
 
 
 
-Q 5] What is the Architecture of semenium WebDriver?
+Q 5] What is the Architecture of selenium WebDriver?
 
 --The architecture of Selenium WebDriver is designed to be modular, allowing it to interact directly with web browsers in a flexible and efficient manner.
 
@@ -169,7 +168,7 @@ Q 5] What is the Architecture of semenium WebDriver?
 
 4. Web Browser :
    
---The environment where the actual testing takes place.
+-- The environment where the actual testing takes place.
 
 -- driver interacts with the browser to perform actions such as navigating to a URL, clicking elements, entering text, and extracting information.
 
@@ -214,42 +213,61 @@ The client libraries process the response and provide the results (e.g., success
 
 
 
-Q] How to Launch Browser?
-
+Q 6] How to Launch Browser in WebDriver?
 
-    1] Launch ChromeBrowser : 
-                 System.setProperty(“key”,”value”);
+In Selenium 3,
+1] Launch ChromeBrowser : 
+
+    System.setProperty(“key”,”value”);
                                       Key  webdriver.chrome.driver
-                                      Value path of chromedriver.exe\\chromedriver.exe 
-                WebDriver driver = new ChromeDriver();
-        2] Launch FirefoxBrowser : 
-                             System.setProperty(“key”,”value”);
-                                                  Key  webdriver.gecko.driver
-                                                  Value path of geckodriver.exe\\geckodriver.exe 
-                            WebDriver driver = new FirefoxDriver();
-         3]     Launch EdgeBrowser(Internet) : 
-                           System.setProperty(“key”,”value”);
-                                              Key  webdriver.edge.driver
-                                              Value path of edgedriver.exe\\msedgedriver.exe 
-                           WebDriver driver = new EdgeDriver();
+                                      Value path of chromedriver.exe\\chromedriver.exe
+    WebDriver driver = new ChromeDriver();
+2] Launch FirefoxBrowser : 
+
+    System.setProperty(“key”,”value”);
+                                      Key  webdriver.gecko.driver
+                                      Value path of geckodriver.exe\\geckodriver.exe 
+    WebDriver driver = new FirefoxDriver();
+3] Launch EdgeBrowser(Internet) : 
+
+    System.setProperty(“key”,”value”);
+                                         Key  webdriver.edge.driver
+                                         Value path of edgedriver.exe\\msedgedriver.exe 
+    WebDriver driver = new EdgeDriver();
 Suppose , I don’t want download this drivers manually, then hear one more approach 
 Just copy the WebDriverManager dependency from Maven Depository and paste in pom.xml file in our Maven Project.
  Launch ChromeBrowser : 
  
                  WebDriverManager.chromedriver().setup();
-                     WebDriver driver = new ChromeDriver();
+                 WebDriver driver = new ChromeDriver();
  OR
  Launch FirefoxBrowser :
                      
-		       WebDriverManager.firefoxdriver().setup();
-	                WebDriver driver = new FirefoxDriver();
+	         WebDriverManager.firefoxdriver().setup();
+                 WebDriver driver = new FirefoxDriver();
 OR
   
  Launch EdgeBrowser(Internet) :
  
-                      WebDriverManager.edgedriver().setup();
-          
-                         WebDriver driver = new EdgeDriver();
+		 WebDriverManager.edgedriver().setup();
+                 WebDriver driver = new EdgeDriver();
+
+   In Selenium 4, if you want to launch browser then,
+ 
+    WebDriver driver = new ChromeDriver();
+OR
+   
+    WebDriver driver = new FirefoxDriver();
+OR
+
+    WebDriver driver = new EdgeDriver();
+
+
+Q 7] What is WebDriverManager ?
+
+WebDriverManager is a Java library that automates the management of browser drivers, 
+such as ChromeDriver, GeckoDriver (for Firefox)and others, 
+which are required by Selenium WebDriver to control web browsers.
 Q] How to Open URL?
   
          
