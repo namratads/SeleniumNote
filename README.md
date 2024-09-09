@@ -319,23 +319,35 @@ Q 15] What is the difference between get(); and navigate().to();?
 
 Feature-----------------get();---------------------------------navigate().to();
 
-Wait Behavior	        Waits for the entire page to load      Does not always wait for full page load
+1]Wait Behavior	        1]Waits for the entire page to load      1]Does not always wait for full page load
 
-History Handling	Does not maintain browser history      Maintains browser history, useful for navigating back/forward
+2]History Handling	2]Does not maintain browser history      2]Maintains browser history, useful for navigating back/forward
 
-Additional Actions	Only opens URL	                       Can navigate back, forward, refresh in addition to opening URL
-
-
-Q] findElement();  method -------returns Single WebElement---if not found then throwsNoSuchElementException
+3]Additional Actions	3]Only opens URL	                 3]Can navigate back, forward, refresh in addition to opening URL
 
 
-     Driver.findElement(By.xpath(“—xpath--”));
-    findElements();  method -----returns MultipleWebElements---List< WebElement >------if xpath of only one WebElement pass then it will return one WebElement--------if not found then  
-    size();  method  just return 0 (not throws any exception)
+Q 16] What is the difference between findElement(); and findElements(); in Selenium WebDriver?
+
+findElement(); method 
+---used to locate a single web element on the web page.
+---returns Single WebElement or first matching element.
+---if not found then throwsNoSuchElementException
+
+    Driver.findElement(By.xpath(“—xpath--”));
+findElements(); method 
+---used to locate multiple web elements that match the locator.
+---Returns a List<WebElement> of all matching elements.
+---If no elements are found, it returns an empty list (does not throw an exception)
+   --size();method--just return 0 (not throws any exception)
+---if xpath of only one WebElement pass then it will return one WebElement. 
+    
     Driver.findElements(By.xpath(“—xpath--”));
-     Here we get multiple elements so when we want to get it one by one name for print then we should go for for-each loop .
-    For(WebElement wb : varableoflist ) {
-                System.out.println(Wb.getText());     }
+---Here we get multiple elements so when we want to get it one by one name for print then we should go for for-each loop .
+    
+    For(WebElement wb : varableoflist ) 
+    {
+                System.out.println(Wb.getText());   
+    }
 
 Q] How to clear old text from Input Box and provide new text in Input Box?
       
