@@ -318,8 +318,11 @@ Q 15] What is the difference between get(); and navigate().to();?
 
 
 Feature-----------------get();---------------------------------navigate().to();
+
 Wait Behavior	        Waits for the entire page to load      Does not always wait for full page load
+
 History Handling	Does not maintain browser history      Maintains browser history, useful for navigating back/forward
+
 Additional Actions	Only opens URL	                       Can navigate back, forward, refresh in addition to opening URL
 
 
