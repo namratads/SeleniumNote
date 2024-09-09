@@ -349,11 +349,15 @@ findElements(); method
                 System.out.println(Wb.getText());   
     }
 
-Q] How to clear old text from Input Box and provide new text in Input Box?
+Q 17] How to clear old text from Input Box and provide new text in Input Box?
+  or Q] How to provide and clear text from input box?
+--sendKeys() is used to type or input text into an element.
+--clear() removes any existing text from a text input field.
       
-      WebElement wb = driver.findElement(By.xpath(“—xpath--”));
-      System.out.println(wb.clear());------it will return clear Text from Input Box
-      System.out.println(wb.sendKeys(“—someText--”));
+    WebElement wb = driver.findElement(By.xpath(“—xpath--”));
+    System.out.println(wb.clear());------it will return clear Text from Input Box
+    System.out.println(wb.sendKeys(“—someText--”));
+
 Q] How to Capture Text from Input Box?
      
      System.out.println(wb.getAttribute(“value”));  ------it will return default Text from Input Box
