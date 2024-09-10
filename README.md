@@ -505,7 +505,7 @@ Demo website  =   https://www.opencart.com/index.php?route=account/register
 
 
 
-Q] How to handle Multiple Dropdowns in a WebPage? 
+Q 22] How to handle Multiple Dropdowns in a WebPage? 
 or Q] How to handle Multiple Dropdowns in a WebPage using generic method?
 
 Demo website  =  https://formstone.it/components/dropdown/demo/ 
@@ -551,9 +551,13 @@ Aproach2: by using Generic method----here not need to create Select class object
 			}
 
 
-Q] How to handle Bootstrap Dropdown in Selenium WebDriver?
+Q 23] How to handle Bootstrap Dropdown in Selenium WebDriver?
 
 Bootstrap Dropdown means here Select Tag is not available to Dropdown and WebElement look like button but it is actually Dropdown.
+
+Bootstrap dropdowns are generally made of <div>, <ul>, and <li> elements. 
+
+To handle them, you first need to click on the dropdown element to reveal the list, and then interact with the list items.
 
     driver.findElement(By.xpath(“—xpath--”)).click();---wb of Dropdown
     List<WebElement> l = driver.findElements(By.xpath(“—xpath--”));-----------------list of wb of Bootstrap dropdown
