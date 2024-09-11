@@ -577,9 +577,9 @@ To handle them, you first need to click on the dropdown element to reveal the li
 If webpage have multiple Bootstrap Dropdown then we should go for Generic method
 
 
-Q] How to handle jQuery Dropdown in Selenium WebDriver?
+Q 24] How to handle jQuery Dropdown in Selenium WebDriver?
 
-    Demo website = https://www.jqueryscript.net/demo/Drop-Down-Combo-Tree/
+Demo website = https://www.jqueryscript.net/demo/Drop-Down-Combo-Tree/
 
 Here ,  In jQuery Dropdown, we can select one option or more option or all option
 
