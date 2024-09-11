@@ -538,6 +538,10 @@ Aproach2: by using Generic method----here not need to create Select class object
     getOptFromDropdown(wb3,“value”);  
 //write Generic method
 
+
+
+
+
     Public static void getOptFromDropdown(WebElement wb,String value)  {
           Select s = new Select(wb);
           List<WebElement> l = s.getOptions();
