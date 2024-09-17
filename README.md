@@ -237,6 +237,7 @@ In Selenium 3,
 Suppose , I don’t want download this drivers manually, then hear one more approach 
 Just copy the WebDriverManager dependency from Maven Depository and paste in pom.xml file in our Maven Project.
  Launch ChromeBrowser : 
+
  
                  WebDriverManager.chromedriver().setup();
                  WebDriver driver = new ChromeDriver();
